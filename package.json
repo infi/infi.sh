@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/cascadia-code": "^4.2.1",
     "@fontsource/inter": "^4.5.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/boxicons-solid": "^10.38.0",

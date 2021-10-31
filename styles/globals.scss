@@ -2,6 +2,7 @@
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/700.css";
 @import "@fontsource/inter/900.css";
+@import "@fontsource/cascadia-code/400.css";
 
 @import "highlight.js/styles/github-dark.css";
 
@@ -29,6 +30,11 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     background: #201a25;
+}
+
+pre,
+code {
+    font-family: "Cascadia Code", monospace;
 }
 
 @import "./markdown";
