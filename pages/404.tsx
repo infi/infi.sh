@@ -10,6 +10,10 @@ const NotFoundWrapper = styled.div`
     width: 100vw;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 `
 
 const NotFoundStatusCode = styled.h1`
