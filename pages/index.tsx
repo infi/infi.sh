@@ -1,6 +1,6 @@
 import InitialIntroduction from "../components/index/InitialIntroduction"
 import LatestPosts from "../components/index/LatestPosts"
-import { getAllPosts } from "../lib/api"
+import { getAllPosts } from "../lib/posts"
 import { Post } from "../lib/types"
 import Head from "next/head"
 

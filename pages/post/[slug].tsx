@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug } from '../../lib/api'
+import { getAllPosts, getPostBySlug } from '../../lib/posts'
 import markdownToHtml from '../../lib/markdown'
 import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar'
