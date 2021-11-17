@@ -5,7 +5,6 @@ import remarkGfm from "remark-gfm"
 import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
 import rehypeHighlight from "rehype-highlight"
-import { remarkTruncateLinks } from "remark-truncate-links"
 import rehypeStringify from "rehype-stringify"
 
 export default async (markdown: string) => {
@@ -13,7 +12,6 @@ export default async (markdown: string) => {
         .use(remarkParse)
         .use(remarkEmoji)
         .use(remarkGfm)
-        .use(remarkTruncateLinks)
         .use(remarkRehype)
         .use(rehypeRaw)
         .use(rehypeHighlight)
