@@ -29,7 +29,8 @@ const Home = ({ allPosts, allProjects }: Props) => {
                 items={allProjects}
                 component={LatestProjectDisplay}
                 heading={"Latest Projects"}
-                useCompactColumns={true} />
+                useCompactColumns={true}
+                allItemsLink={"/projects"} />
         </>
     )
 }
