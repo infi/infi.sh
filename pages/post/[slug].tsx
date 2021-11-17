@@ -6,8 +6,9 @@ import styled from 'styled-components'
 import dynamic from 'next/dynamic'
 import Head from "next/head"
 import { formatDistanceToNow } from 'date-fns'
-import LatestPosts from '../../components/index/LatestPosts'
+import LatestGrid from '../../components/display/LatestGrid'
 import AuthorDisplay from '../../components/display/AuthorDisplay'
+import LatestPostDisplay from '../../components/display/LatestPostDisplay'
 const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 const PostHeader = styled.div`
@@ -129,7 +130,7 @@ const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
                 </Anime>
             </PostContent>
             <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={700}>
-                <LatestPosts posts={latestPosts} />
+                <LatestGrid items={latestPosts} component={LatestPostDisplay} heading={"Latest Posts"} />
             </Anime>
         </>
     )

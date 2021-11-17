@@ -12,3 +12,16 @@ export type Post = {
     ogImage: string;
     slug: string;
 }
+
+export type Project = {
+    title: string;
+    description: string;
+    coverImage: string;
+    date: string;
+    years: string[];
+    ogImage: string;
+    slug: string;
+    tech: string[];
+    categories: string[];
+    featured: boolean;
+}
