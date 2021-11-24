@@ -62,6 +62,10 @@ const TagSpace = styled.div`
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const Tag = styled.div`
@@ -111,7 +115,7 @@ const Project = ({ project, latestProjects }: { project: any, latestProjects: an
             <Head>
                 <meta property="og:title" content={project.title} />
                 <meta property="og:image" content={project.ogImage ?? "https://infi.sh/opengraph.png"} />
-                <meta property="og:description" content={project.description + ` (${project.readingTime})`} />
+                <meta property="og:description" content={project.description} />
             </Head>
             <Navbar />
             <ProjectHeader>
