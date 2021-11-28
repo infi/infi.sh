@@ -83,7 +83,7 @@ const LatestPostDisplay = ({ data: item }: { data: Post }) => {
                     <PostReadMore>Read More »</PostReadMore>
                 </Link>
             </div>
-            <PostImage src={item.coverImage} alt={item.title} />
+            {item.coverImage && (<PostImage src={item.coverImage} alt={item.title} />)}
         </PostDisplay>
     )
 }

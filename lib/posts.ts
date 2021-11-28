@@ -44,7 +44,7 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
 export const getAllPosts = (fields: string[] = []) => {
     const slugs = getPostSlugs()
     const posts = slugs
-        .map((slug) => getPostBySlug(slug, fields))
+        .map((slug) => getPostBySlug(slug, ["date", ...fields]))
         // sort posts by date in descending order
         .sort((post1, post2) => (new Date(post1.date) < new Date(post2.date) ? 1 : -1))
     return posts
