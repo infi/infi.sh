@@ -11,7 +11,7 @@ import AuthorDisplay from '../../components/display/AuthorDisplay'
 import LatestPostDisplay from '../../components/display/LatestPostDisplay'
 const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
-const PostHeader = styled.div`
+const PostHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@ const PostDescription = styled.div`
     text-align: center;
 `
 
-const PostContent = styled.div`
+const PostContent = styled.main`
     max-width: 60vw;
     margin: 0 auto;
     padding-top: 2rem;
@@ -60,7 +60,7 @@ const PostContent = styled.div`
     }
 `
 
-const PostAuthor = styled.div`
+const PostAuthor = styled.footer`
     background-color: #28202f;
     font-size: 1.2rem;
     font-weight: 400;
@@ -120,7 +120,7 @@ const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
             </PostHeader>
             <PostContent>
                 <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={500}>
-                    <div className="markdown-dynamic-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+                    <article className="markdown-dynamic-content" dangerouslySetInnerHTML={{ __html: post.content }} />
                 </Anime>
                 <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={600}>
                     <PostAuthor>

@@ -9,7 +9,7 @@ import LatestGrid from '../../components/display/LatestGrid'
 import LatestProjectDisplay from '../../components/display/LatestProjectDisplay'
 const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
-const ProjectHeader = styled.div`
+const ProjectHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@ const ProjectDescription = styled.div`
     text-align: center;
 `
 
-const ProjectContent = styled.div`
+const ProjectContent = styled.main`
     max-width: 60vw;
     margin: 0 auto;
     padding-top: 2rem;
@@ -134,7 +134,7 @@ const Project = ({ project, latestProjects }: { project: any, latestProjects: an
                         ))}
                     </TagSpace>
                     <h2>About</h2>
-                    <div dangerouslySetInnerHTML={{ __html: project.content }} />
+                    <article dangerouslySetInnerHTML={{ __html: project.content }} />
                     <h2>Categories</h2>
                     <TagSpace>
                         {project.categories.map((category: string) => (
