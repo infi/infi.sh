@@ -8,7 +8,6 @@ const PostDisplay = styled.div`
     border-radius: 15px;
     margin: 5px 0;
     background-color: #28202F;
-    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 

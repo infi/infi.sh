@@ -15,7 +15,7 @@ const LatestGridHeading = styled.h1`
 const Items = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    gap: 20px;
 
     @media (max-width: 1400px) {
         grid-template-columns: 1fr;
@@ -25,7 +25,7 @@ const Items = styled.div`
 const ItemsCompact = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    gap: 20px;
 
     @media (max-width: 1400px) {
         grid-template-columns: 1fr;
