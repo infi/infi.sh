@@ -6,7 +6,6 @@ import Link from "next/link"
 const PostDisplay = styled.div`
     padding: 20px;
     border-radius: 15px;
-    margin: 5px 0;
     background-color: #28202F;
     display: flex;
     justify-content: space-between;
