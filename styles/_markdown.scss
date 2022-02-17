@@ -66,6 +66,10 @@
         }
     }
 
+    p {
+        line-height: 1.5;
+    }
+
     pre > code {
         border-radius: 15px;
         padding: 1.5em !important;
@@ -75,5 +79,51 @@
         background-color: rgb(0 0 0 / 0.2);
         padding: 0.2em 0.3em !important;
         border-radius: 5px;
+    }
+
+    .admonition {
+        padding: 1.4em;
+        margin: 1.4em 0;
+        border-radius: 15px;
+
+        &.adm-type-generic {
+            background-color: #28202f;
+        }
+
+        &.adm-type-warning {
+            background-color: #ffb86c;
+            color: #28202f;
+        }
+
+        &.adm-type-danger {
+            background-color: #ff6b6b;
+            color: #28202f;
+        }
+
+        &.adm-type-info {
+            background-color: #c786ff;
+            color: #28202f;
+        }
+
+        &.adm-type-success {
+            background-color: #a3d65c;
+            color: #28202f;
+        }
+
+        .adm-heading {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: inherit;
+        }
+
+        h3,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            margin-top: 0.5em;
+        }
     }
 }

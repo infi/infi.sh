@@ -121,7 +121,7 @@ const Project = ({ project, latestProjects }: { project: any, latestProjects: an
             <ProjectHeader>
                 <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
                     <ProjectTitle>{project.title}</ProjectTitle>
-                    <ProjectQuickInfo>{project.years?.join(", ")}</ProjectQuickInfo>
+                    <ProjectQuickInfo>{project.team && "Team effort · "}{project.years?.join(", ")}</ProjectQuickInfo>
                     <ProjectDescription>{project.description}</ProjectDescription>
                 </Anime>
             </ProjectHeader>
@@ -181,6 +181,7 @@ export const getStaticProps = async ({ params }: Params) => {
         'tech',
         'categories',
         'buttons',
+        'team'
     ])
     const content = await markdownToHtml(project.content || '# no content')
 
