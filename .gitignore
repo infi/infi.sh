@@ -37,10 +37,10 @@ yarn-error.log*
 TODO.md
 
 # posts
-_posts/
+#_posts/
 
 # projects
-_projects/
+#_projects/
 
 # (copyrighted) assets
-public/
+#public/
