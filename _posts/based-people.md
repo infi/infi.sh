@@ -6,7 +6,7 @@ date: "2021-11-28T21:56:11.216Z"
 author:
     name: Infi
     picture: https://github.com/infi.png
-ogImage: https://infi.sh/opengraph.png
+ogImage: /opengraph.png
 ---
 
 :::note

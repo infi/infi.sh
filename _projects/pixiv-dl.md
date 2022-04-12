@@ -1,12 +1,12 @@
 ---
 title: pixiv-dl
 description: Multithreaded Pixiv downloader
-coverImage: https://infi.mo.cloudinary.net/projects/pixiv-dl/terminal.png
+coverImage: /projects/pixiv-dl/terminal.png
 date: "2021-11-28T21:34:57.668Z"
-featured: true
+featured: false
 years:
     - 2021
-ogImage: https://infi.mo.cloudinary.net/projects/pixiv-dl/terminal.png
+ogImage: /projects/pixiv-dl/terminal.png
 tech:
     - Rust
     - Tokio

@@ -1,12 +1,13 @@
 ---
 title: This is the new infi.sh
 description: A completely new website, built from scratch with Next.js
-coverImage: https://infi.mo.cloudinary.net/posts/new-website/epiphany.png
+coverImage: /posts/new-website/epiphany.png
 date: "2021-09-27T21:27:13.118Z"
+pinned: true
 author:
     name: Infi
     picture: https://github.com/infi.png
-ogImage: https://infi.mo.cloudinary.net/opengraph.png
+ogImage: /opengraph.png
 ---
 
 I have been working on a new website for a while now, and it finally got to a point where I can say: It's here.  

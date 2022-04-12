@@ -9,10 +9,7 @@ const PostDisplay = styled.div`
     background-color: #28202F;
     display: flex;
     justify-content: space-between;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
+    flex-direction: column;
 `
 
 const PostTitle = styled.h2`
@@ -70,7 +67,7 @@ const PostImage = styled.img`
     }
 `
 
-const LatestPostDisplay = ({ data: item }: { data: Post }) => {
+const PostListDisplay = ({ data: item }: { data: Post }) => {
     return (
         <PostDisplay key={item.slug}>
             <div>
@@ -88,4 +85,4 @@ const LatestPostDisplay = ({ data: item }: { data: Post }) => {
     )
 }
 
-export default LatestPostDisplay
+export default PostListDisplay

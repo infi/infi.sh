@@ -24,7 +24,8 @@ const Home = ({ allPosts, allProjects }: Props) => {
             <LatestGrid
                 items={allPosts}
                 component={LatestPostDisplay}
-                heading={"Latest Posts"} />
+                heading={"Latest Posts"}
+                allItemsLink={"/posts"} />
             <LatestGrid
                 items={allProjects}
                 component={LatestProjectDisplay}
