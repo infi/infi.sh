@@ -33,6 +33,14 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
             items[field] = readingTime(content).text
         }
 
+        if (field === "ogImage") {
+            if (data[field]) {
+                items[field] = data[field]
+            } else {
+                items[field] = `/api/opengraph/post/${realSlug}.png`
+            }
+        }
+
         if (typeof data[field] !== "undefined") {
             items[field] = data[field]
         }

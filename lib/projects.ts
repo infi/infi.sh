@@ -28,6 +28,13 @@ export const getProjectBySlug = (slug: string, fields: string[] = []) => {
         if (field === "content") {
             items[field] = content
         }
+        if (field === "ogImage") {
+            if (data[field]) {
+                items[field] = data[field]
+            } else {
+                items[field] = `/api/opengraph/project/${realSlug}.png`
+            }
+        }
 
         if (typeof data[field] !== "undefined") {
             items[field] = data[field]

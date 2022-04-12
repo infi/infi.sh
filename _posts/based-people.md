@@ -1,12 +1,10 @@
 ---
 title: The list of great people
 description: Many great people have been part of my Revolt journey.
-coverImage:
 date: "2021-11-28T21:56:11.216Z"
 author:
     name: Infi
     picture: https://github.com/infi.png
-ogImage: /opengraph.png
 ---
 
 :::note

@@ -7,7 +7,6 @@ pinned: true
 author:
     name: Infi
     picture: https://github.com/infi.png
-ogImage: /opengraph.png
 ---
 
 I have been working on a new website for a while now, and it finally got to a point where I can say: It's here.  

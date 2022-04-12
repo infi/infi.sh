@@ -5,7 +5,6 @@ date: "2022-02-16T13:35:00.000Z"
 author:
     name: Infi
     picture: https://github.com/infi.png
-ogImage: /opengraph.png
 ---
 
 All of the previous blog posts have now been renamed to start with "How".
