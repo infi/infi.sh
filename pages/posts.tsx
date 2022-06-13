@@ -46,7 +46,7 @@ const AllPosts = ({ posts, pinnedPosts }: { posts: Post[], pinnedPosts: Post[] }
         <>
             <Head>
                 <meta property="og:title" content="Posts" />
-                <meta property="og:image" content="/api/opengraph/text?q=All%20Posts" />
+                <meta property="og:image" content="https://infi.sh/api/opengraph/text?q=All%20Posts" />
                 <meta property="og:description" content="All editorial material on infi.sh." />
             </Head>
             <Navbar />
