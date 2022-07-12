@@ -3,7 +3,7 @@ title: infi.sh
 description: This very website
 coverImage: /posts/new-website/epiphany.png
 date: "2021-09-27T21:27:13.118Z"
-featured: true
+featured: false
 years:
     - 2021
 ogImage: /posts/new-website/epiphany.png

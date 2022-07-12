@@ -41,8 +41,6 @@ In addition, I have specified the project's brand design guidelines to give the 
 
 ![Brand Design Handbook](/projects/revolt/brand.png)
 
-### Examples of Social Media Cards
-
 ![Improved Login Page](/projects/revolt/login.png)
 
 ![Discover Themes](/projects/revolt/themes.png)
