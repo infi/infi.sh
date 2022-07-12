@@ -5,10 +5,10 @@ $color-background-slightly-lighter: lighten($color-background, 3);
 $color-background-lighter: lighten($color-background, 5);
 
 $color-accent: #9179f0;
-$color-primary: #c786ff;
-$color-secondary: #d0a4fa;
-$color-tertiary: #bea7ff;
-$color-quaternary: #dfd3ff;
+$color-primary: #9862fd;
+$color-secondary: #9380ff;
+$color-tertiary: #a685ff;
+$color-quaternary: #cfbffc;
 $color-quaternary-darker: darken($color-quaternary, 4);
 
 $color-warning: #ffb86c;
@@ -34,4 +34,26 @@ $color-success: #a3d65c;
     --color-danger: #{$color-danger};
     --color-information: #{$color-information};
     --color-success: #{$color-success};
+}
+
+@media print {
+    :root {
+        --color-foreground: unset;
+        --color-background: unset;
+        --color-background-darker: unset;
+        --color-background-slightly-lighter: unset;
+        --color-background-lighter: unset;
+
+        --color-primary: unset;
+        --color-accent: unset;
+        --color-secondary: unset;
+        --color-tertiary: unset;
+        --color-quaternary: unset;
+        --color-quaternary-darker: unset;
+
+        --color-warning: unset;
+        --color-danger: unset;
+        --color-information: unset;
+        --color-success: unset;
+    }
 }
