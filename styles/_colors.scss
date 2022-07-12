@@ -1,0 +1,37 @@
+$color-foreground: #f0f0f0;
+$color-background: #201a25;
+$color-background-darker: darken($color-background, 4);
+$color-background-slightly-lighter: lighten($color-background, 3);
+$color-background-lighter: lighten($color-background, 5);
+
+$color-accent: #9179f0;
+$color-primary: #c786ff;
+$color-secondary: #d0a4fa;
+$color-tertiary: #bea7ff;
+$color-quaternary: #dfd3ff;
+$color-quaternary-darker: darken($color-quaternary, 4);
+
+$color-warning: #ffb86c;
+$color-danger: #ff6b6b;
+$color-information: $color-primary;
+$color-success: #a3d65c;
+
+:root {
+    --color-foreground: #{$color-foreground};
+    --color-background: #{$color-background};
+    --color-background-darker: #{$color-background-darker};
+    --color-background-slightly-lighter: #{$color-background-slightly-lighter};
+    --color-background-lighter: #{$color-background-lighter};
+
+    --color-primary: #{$color-primary};
+    --color-accent: #{$color-accent};
+    --color-secondary: #{$color-secondary};
+    --color-tertiary: #{$color-tertiary};
+    --color-quaternary: #{$color-quaternary};
+    --color-quaternary-darker: #{$color-quaternary-darker};
+
+    --color-warning: #{$color-warning};
+    --color-danger: #{$color-danger};
+    --color-information: #{$color-information};
+    --color-success: #{$color-success};
+}

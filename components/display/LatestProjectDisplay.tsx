@@ -6,7 +6,7 @@ const ProjectDisplay = styled.div`
     padding: 20px;
     border-radius: 15px;
     margin: 5px 0;
-    background-color: #28202F;
+    background-color: var(--color-background-slightly-lighter);
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@ const ProjectDisplay = styled.div`
 const ProjectTitle = styled.h2`
     font-size: 1.5rem;
     font-weight: 400;
-    color: #9179F0;
+    color: var(--color-accent);
     margin: 0;
     padding: 0;
     user-select: none;
@@ -26,7 +26,7 @@ const ProjectTitle = styled.h2`
 const ProjectYear = styled.p`
     font-size: 1rem;
     font-weight: 400;
-    color: #CAB8FD;
+    color: var(--color-quaternary-darker);
     margin: 0;
     padding: 0;
     user-select: none;
@@ -35,7 +35,7 @@ const ProjectYear = styled.p`
 const ProjectDescription = styled.p`
     font-size: 1.25rem;
     font-weight: 400;
-    color: #dfd3ff;
+    color: var(--color-quaternary);
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 0;
@@ -44,7 +44,7 @@ const ProjectDescription = styled.p`
 const ProjectMoreInfo = styled.span`
     font-size: 1rem;
     font-weight: 400;
-    color: #9179F0;
+    color: var(--color-accent);
     text-decoration: none;
     margin: 0;
     padding: 0;

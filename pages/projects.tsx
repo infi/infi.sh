@@ -13,7 +13,7 @@ const ProjectHeader = styled.div`
     align-items: center;
     align-content: center;
     min-height: 40vh;
-    background-color: #28202F;
+    background-color: var(--color-background-slightly-lighter);
     flex-direction: column;
     user-select: none;
 
@@ -25,7 +25,7 @@ const ProjectHeader = styled.div`
 const PageTitle = styled.h1`
     max-width: 1000px;
     text-align: center;
-    color: #9179F0;
+    color: var(--color-accent);
     font-size: 2.5rem;
     font-weight: 400;
 `

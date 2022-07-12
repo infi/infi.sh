@@ -15,7 +15,7 @@ const ProjectHeader = styled.header`
     align-items: center;
     align-content: center;
     min-height: 40vh;
-    background-color: #28202F;
+    background-color: var(--color-background-slightly-lighter);
     flex-direction: column;
     user-select: none;
 
@@ -27,7 +27,7 @@ const ProjectHeader = styled.header`
 const ProjectTitle = styled.h1`
     max-width: 1000px;
     text-align: center;
-    color: #9179F0;
+    color: var(--color-accent);
     font-size: 2.5rem;
     font-weight: 400;
 `
@@ -35,7 +35,7 @@ const ProjectTitle = styled.h1`
 const ProjectQuickInfo = styled.div`
     max-width: 800px;
     text-align: center;
-    color: #CAB8FD;
+    color: var(--color-tertiary);
     font-size: 1.2rem;
     font-weight: 400;
 `
@@ -69,8 +69,8 @@ const TagSpace = styled.div`
 `
 
 const Tag = styled.div`
-    background-color: #CAB8FD;
-    color: #28202F;
+    background-color: var(--color-quaternary-darker);
+    color: var(--color-background);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1.2rem;
@@ -82,7 +82,7 @@ const SeeMoreButtons = styled.div`
 `
 
 const SeeMoreButton = styled.a`
-    background-color: #28202f;
+    background-color: var(--color-background-slightly-lighter);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1.2rem;

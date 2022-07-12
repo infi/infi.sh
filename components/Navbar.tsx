@@ -20,7 +20,7 @@ const NavbarBrand = styled.span`
     transition: color .2s ease-in-out;
     
     :hover {
-        color: #CAB8FD;
+        color: var(--color-tertiary);
     }
 `
 
@@ -33,7 +33,7 @@ const NavbarLeft = styled.div`
 const NavbarLink = styled(Link)`
     :link,
     :visited {
-        color: #fff;
+        color: var(--color-foreground);
         text-decoration: none;
     }
 `

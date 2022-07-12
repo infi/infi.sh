@@ -6,30 +6,34 @@
 
 @import "highlight.js/styles/github-dark.css";
 
+@import "./colors";
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
-    scrollbar-color: #201a25 #28202f;
+    scrollbar-color: var(--color-background) var(--color-background-lighter);
     scrollbar-width: thin;
-    background-color: #201a25;
-    color: #f0f0f0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
 }
 
 ::selection {
-    background: #d0a4fa;
-    color: #201a25;
+    background: var(--color-secondary);
+    color: var(--color-background);
 }
 
 ::-webkit-scrollbar {
     width: 10px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #28202f;
+    background: var(--color-background-lighter);
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #201a25;
+    background: var(--color-background);
 }
 
 pre,

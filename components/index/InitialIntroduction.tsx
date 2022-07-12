@@ -13,8 +13,8 @@ const IntroductionWrapper = styled.div`
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: #28202F;
-    color: #9179F0;
+    background-color: var(--color-background-darker);
+    color: var(--color-accent);
     cursor: default;
     flex-direction: column;
 `
@@ -39,25 +39,24 @@ const NameIntroduction = styled.div`
 
 const EmphasizedNameIntroduction = styled(NameIntroduction)`
     font-weight: 900;
-    color: #CAB8FD;
+    color: var(--color-tertiary);
 `
 
 const GitHubSection = styled.div`
     font-weight: 400;
     font-size: 1.5rem;
-    color: #AD96DE;
+    color: var(--color-tertiary);
     text-align: right;
 `
 
 const GitHubLink = styled.a`
-    color: #9179F0;
+    color: var(--color-accent);
     text-decoration: none;
     display: block;
 `
 
 const ScrollChevron = styled(ChevronDown)`
     height: 50px;
-    color: #9883ee;
     margin-bottom: 10px;
     cursor: pointer;
 

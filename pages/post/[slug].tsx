@@ -17,7 +17,7 @@ const PostHeader = styled.header`
     align-items: center;
     align-content: center;
     min-height: 40vh;
-    background-color: #28202F;
+    background-color: var(--color-background-slightly-lighter);
     flex-direction: column;
     user-select: none;
 
@@ -29,7 +29,7 @@ const PostHeader = styled.header`
 const PostTitle = styled.h1`
     max-width: 1000px;
     text-align: center;
-    color: #9179F0;
+    color: var(--color-accent);
     font-size: 2.5rem;
     font-weight: 400;
 `
@@ -37,7 +37,7 @@ const PostTitle = styled.h1`
 const PostDate = styled.div`
     max-width: 800px;
     text-align: center;
-    color: #CAB8FD;
+    color: var(--color-quaternary);
     font-size: 1.2rem;
     font-weight: 400;
 `
@@ -61,7 +61,7 @@ const PostContent = styled.main`
 `
 
 const PostAuthor = styled.footer`
-    background-color: #28202f;
+    background-color: var(--color-background-slightly-lighter);
     font-size: 1.2rem;
     font-weight: 400;
     padding: 1.2em;
@@ -69,7 +69,7 @@ const PostAuthor = styled.footer`
 `
 
 const PostAuthorHeader = styled.h3`
-    color: #9179F0;
+    color: var(--color-accent);
     font-size: 1rem;
     font-weight: 400;
     margin: 0;

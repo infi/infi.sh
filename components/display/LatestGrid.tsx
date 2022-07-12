@@ -8,7 +8,7 @@ const LatestGridWrapper = styled.div`
 const LatestGridHeading = styled.h1`
     font-size: 2.5rem;
     font-weight: 300;
-    color: #9179F0;
+    color: var(--color-accent);
     user-select: none;
 `
 
@@ -34,7 +34,7 @@ const ItemsCompact = styled.div`
 
 const AllItemsLink = styled.a`
     text-decoration: none;
-    color: #9179F0;
+    color: var(--color-accent);
     font-size: 1.2rem;
     font-weight: 300;
     margin-left: 20px;

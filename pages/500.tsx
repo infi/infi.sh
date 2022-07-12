@@ -17,14 +17,14 @@ const ServerErrorWrapper = styled.div`
 const ServerErrorStatusCode = styled.h1`
     font-size: 5rem;
     font-weight: 400;
-    color: #9179F0;
+    color: var(--color-accent);
     margin: 0;
 `
 
 const ServerErrorMessage = styled.h2`
     font-size: 2rem;
     font-weight: 400;
-    color: #CAB8FD;
+    color: var(--color-quaternary);
     margin: 0;
 `
 

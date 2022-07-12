@@ -1,12 +1,14 @@
 .markdown-dynamic-content {
+
     a:link,
     a:visited {
         text-decoration: none;
-        transition: color 0.2s ease-in-out;
-        color: #c786ff;
+        transition: color 0.1s ease-in-out;
+        color: var(--color-primary);
+        filter: brightness(1);
 
         &:hover {
-            color: #e3c4ff;
+            color: var(--color-tertiary);
         }
     }
 
@@ -23,7 +25,7 @@
 
     tr:nth-child(even),
     th {
-        background-color: #28202f;
+        background-color: var(--color-background-slightly-lighter);
     }
 
     h1,
@@ -33,7 +35,7 @@
     h5,
     h6 {
         font-weight: 300;
-        color: #cab8fd;
+        color: var(--color-tertiary);
     }
 
     img {
@@ -49,19 +51,19 @@
     }
 
     blockquote {
-        border-left: 1px solid #c786ff;
+        border-left: 1px solid var(--color-primary);
         padding-left: 20px;
         padding-top: 1px;
         padding-bottom: 1px;
         margin: 20px 0;
-        color: #c786ff;
+        color: var(--color-primary);
 
         a:link,
         a:visited {
-            color: #d29fff;
+            color: var(--color-secondary);
 
             &:hover {
-                color: #dfbbff;
+                color: var(--color-tertiary);
             }
         }
     }
@@ -70,12 +72,12 @@
         line-height: 1.5;
     }
 
-    pre > code {
+    pre>code {
         border-radius: 15px;
         padding: 1.5em !important;
     }
 
-    :not(pre) > code {
+    :not(pre)>code {
         background-color: rgb(0 0 0 / 0.2);
         padding: 0.2em 0.3em !important;
         border-radius: 5px;
@@ -87,27 +89,27 @@
         border-radius: 15px;
 
         &.adm-type-generic {
-            background-color: #28202f;
+            background-color: var(--color-background-lighter);
         }
 
         &.adm-type-warning {
-            background-color: #ffb86c;
-            color: #28202f;
+            background-color: var(--color-warning);
+            color: var(--color-background-lighter);
         }
 
         &.adm-type-danger {
-            background-color: #ff6b6b;
-            color: #28202f;
+            background-color: var(--color-danger);
+            color: var(--color-background-lighter);
         }
 
         &.adm-type-info {
-            background-color: #c786ff;
-            color: #28202f;
+            background-color: var(--color-information);
+            color: var(--color-background-lighter);
         }
 
         &.adm-type-success {
-            background-color: #a3d65c;
-            color: #28202f;
+            background-color: var(--color-success);
+            color: var(--color-background-lighter);
         }
 
         .adm-heading {

@@ -39,7 +39,7 @@ As for the rest of the post, I will be demonstrating some Markdown features.
 | --- | --- |
 | Helsinki | Finland |
 | Belgrade | Serbia |
-| 2009 | X |
+| ?????? | ?????? |
 | Oslo | Norway |
 | Düsseldorf | Germany |
 | Baku | Azerbaijan |
