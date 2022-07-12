@@ -1,12 +1,10 @@
 import { getAllPosts } from '../lib/posts'
 import Navbar from '../components/Navbar'
 import styled from 'styled-components'
-import dynamic from 'next/dynamic'
 import Head from "next/head"
 import LatestGrid from '../components/display/LatestGrid'
 import { Post } from '../lib/types'
 import PostListDisplay from '../components/display/PostListDisplay'
-const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 const PostHeader = styled.div`
     display: flex;
@@ -51,17 +49,12 @@ const AllPosts = ({ posts, pinnedPosts }: { posts: Post[], pinnedPosts: Post[] }
             </Head>
             <Navbar />
             <PostHeader>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                    <PageTitle>Posts</PageTitle>
-                </Anime>
+                <PageTitle>Posts</PageTitle>
             </PostHeader>
             <PostContent className="markdown-dynamic-content">
-                {pinnedPosts.length > 0 && <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={500}>
-                    <LatestGrid component={PostListDisplay} items={pinnedPosts} heading="Pinned" />
-                </Anime>}
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={600}>
-                    <LatestGrid component={PostListDisplay} items={posts} heading="Posts" />
-                </Anime>
+                {pinnedPosts.length > 0 &&
+                    <LatestGrid component={PostListDisplay} items={pinnedPosts} heading="Pinned" />}
+                <LatestGrid component={PostListDisplay} items={posts} heading="Posts" />
             </PostContent>
         </>
     )

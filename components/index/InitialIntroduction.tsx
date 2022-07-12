@@ -1,11 +1,7 @@
 import styled from "styled-components"
 import { ChevronDown } from "@styled-icons/boxicons-regular"
-import dynamic from 'next/dynamic'
-/*
- * needed because Anime needs to have
- * access to client-side global objects like window and document
- */
-const Anime = dynamic(() => import('react-anime'), { ssr: false })
+import Lottie from "lottie-react"
+import helloJson from "../../animations/hello.json"
 
 const IntroductionWrapper = styled.div`
     display: flex;
@@ -33,13 +29,7 @@ const Introduction = styled.div`
 `
 
 const NameIntroduction = styled.div`
-    font-weight: 300;
-    font-size: 3rem;
-`
-
-const EmphasizedNameIntroduction = styled(NameIntroduction)`
-    font-weight: 900;
-    color: var(--color-tertiary);
+    width: max(20vw, 300px);
 `
 
 const GitHubSection = styled.div`
@@ -69,41 +59,28 @@ const InitialIntroduction = () => {
     return (
         <IntroductionWrapper>
             <Introduction>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={50}>
-                    <NameIntroduction>
-                        Hello.
-                        <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={100}>
-                            <EmphasizedNameIntroduction>
-                                I'm Infi.
-                            </EmphasizedNameIntroduction>
-                        </Anime>
-                    </NameIntroduction>
-                </Anime>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={500}>
-                    <GitHubSection>
-                        <GitHubLink
-                            href="https://github.com/infi"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            github.com/infi »
-                        </GitHubLink>
-                        <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={510}>
-                            or scroll down
-                        </Anime>
-                    </GitHubSection>
-                </Anime>
+                <NameIntroduction>
+                    <Lottie animationData={helloJson} loop={false} />
+                </NameIntroduction>
+                <GitHubSection>
+                    <GitHubLink
+                        href="https://github.com/infi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        github.com/infi »
+                    </GitHubLink>
+                    or scroll down
+                </GitHubSection>
             </Introduction>
-            <Anime easing={'easeOutExpo'} translateY={[100, 0]} opacity={[0, 1]} delay={1000}>
-                <ScrollChevron
-                    onClick={() => {
-                        window.scrollTo({
-                            top: window.innerHeight,
-                            behavior: 'smooth'
-                        })
-                    }}
-                />
-            </Anime>
+            <ScrollChevron
+                onClick={() => {
+                    window.scrollTo({
+                        top: window.innerHeight,
+                        behavior: 'smooth'
+                    })
+                }}
+            />
         </IntroductionWrapper >
     )
 }

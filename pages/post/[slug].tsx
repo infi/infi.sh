@@ -3,13 +3,11 @@ import markdownToHtml from '../../lib/markdown'
 import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar'
 import styled from 'styled-components'
-import dynamic from 'next/dynamic'
 import Head from "next/head"
 import { formatDistanceToNow } from 'date-fns'
 import LatestGrid from '../../components/display/LatestGrid'
 import AuthorDisplay from '../../components/display/AuthorDisplay'
 import LatestPostDisplay from '../../components/display/LatestPostDisplay'
-const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 const PostHeader = styled.header`
     display: flex;
@@ -90,14 +88,8 @@ const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
                 </Head>
                 <Navbar />
                 <PostHeader>
-                    <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                        {/*
-                          * Yep, we're casually reusing components despite them not fitting this purpose.
-                          * The user will see the regular, global 404 page anyways.
-                          */}
-                        <PostTitle>Post not found</PostTitle>
-                        <PostDate>Sorry for that</PostDate>
-                    </Anime>
+                    <PostTitle>Post not found</PostTitle>
+                    <PostDate>Sorry for that</PostDate>
                 </PostHeader>
             </>
         )
@@ -112,26 +104,18 @@ const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
             </Head>
             <Navbar />
             <PostHeader>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                    <PostTitle>{post.title}</PostTitle>
-                    <PostDate>{formatDistanceToNow(new Date(post.date))} ago · {post.readingTime}</PostDate>
-                    <PostDescription>{post.description}</PostDescription>
-                </Anime>
+                <PostTitle>{post.title}</PostTitle>
+                <PostDate>{formatDistanceToNow(new Date(post.date))} ago · {post.readingTime}</PostDate>
+                <PostDescription>{post.description}</PostDescription>
             </PostHeader>
             <PostContent>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={500}>
-                    <article className="markdown-dynamic-content" dangerouslySetInnerHTML={{ __html: post.content }} />
-                </Anime>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={600}>
-                    <PostAuthor>
-                        <PostAuthorHeader>About the author</PostAuthorHeader>
-                        <AuthorDisplay name={post.author.name} imageUrl={post.author.picture} />
-                    </PostAuthor>
-                </Anime>
+                <article className="markdown-dynamic-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <PostAuthor>
+                    <PostAuthorHeader>About the author</PostAuthorHeader>
+                    <AuthorDisplay name={post.author.name} imageUrl={post.author.picture} />
+                </PostAuthor>
             </PostContent>
-            <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={700}>
-                <LatestGrid items={latestPosts} component={LatestPostDisplay} heading={"Latest Posts"} />
-            </Anime>
+            <LatestGrid items={latestPosts} component={LatestPostDisplay} heading={"Latest Posts"} />
         </>
     )
 }

@@ -3,11 +3,9 @@ import markdownToHtml from '../../lib/markdown'
 import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar'
 import styled from 'styled-components'
-import dynamic from 'next/dynamic'
 import Head from "next/head"
 import LatestGrid from '../../components/display/LatestGrid'
 import LatestProjectDisplay from '../../components/display/LatestProjectDisplay'
-const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 const ProjectHeader = styled.header`
     display: flex;
@@ -101,10 +99,8 @@ const Project = ({ project, latestProjects }: { project: any, latestProjects: an
                 </Head>
                 <Navbar />
                 <ProjectHeader>
-                    <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                        <ProjectTitle>Project not found</ProjectTitle>
-                        <ProjectQuickInfo>Sorry for that</ProjectQuickInfo>
-                    </Anime>
+                    <ProjectTitle>Project not found</ProjectTitle>
+                    <ProjectQuickInfo>Sorry for that</ProjectQuickInfo>
                 </ProjectHeader>
             </>
         )
@@ -119,46 +115,40 @@ const Project = ({ project, latestProjects }: { project: any, latestProjects: an
             </Head>
             <Navbar />
             <ProjectHeader>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                    <ProjectTitle>{project.title}</ProjectTitle>
-                    <ProjectQuickInfo>{project.team && "Team effort · "}{project.years?.join(", ")}</ProjectQuickInfo>
-                    <ProjectDescription>{project.description}</ProjectDescription>
-                </Anime>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectQuickInfo>{project.team && "Team effort · "}{project.years?.join(", ")}</ProjectQuickInfo>
+                <ProjectDescription>{project.description}</ProjectDescription>
             </ProjectHeader>
             <ProjectContent className="markdown-dynamic-content">
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={500}>
-                    <h2>Tech</h2>
-                    <TagSpace>
-                        {project.tech?.map((tech: string) => (
-                            <Tag key={tech}>{tech}</Tag>
+                <h2>Tech</h2>
+                <TagSpace>
+                    {project.tech?.map((tech: string) => (
+                        <Tag key={tech}>{tech}</Tag>
+                    ))}
+                </TagSpace>
+                <h2>About</h2>
+                <article dangerouslySetInnerHTML={{ __html: project.content }} />
+                <h2>Categories</h2>
+                <TagSpace>
+                    {project.categories.map((category: string) => (
+                        <Tag key={category}>{category}</Tag>
+                    ))}
+                </TagSpace>
+                {project.buttons?.length > 0 ? <>
+                    <h2>See more</h2>
+                    <SeeMoreButtons>
+                        {project.buttons.map((button: { link: string, text: string }) => (
+                            <SeeMoreButton key={button.link} href={button.link}>{button.text}</SeeMoreButton>
                         ))}
-                    </TagSpace>
-                    <h2>About</h2>
-                    <article dangerouslySetInnerHTML={{ __html: project.content }} />
-                    <h2>Categories</h2>
-                    <TagSpace>
-                        {project.categories.map((category: string) => (
-                            <Tag key={category}>{category}</Tag>
-                        ))}
-                    </TagSpace>
-                    {project.buttons?.length > 0 ? <>
-                        <h2>See more</h2>
-                        <SeeMoreButtons>
-                            {project.buttons.map((button: { link: string, text: string }) => (
-                                <SeeMoreButton key={button.link} href={button.link}>{button.text}</SeeMoreButton>
-                            ))}
-                        </SeeMoreButtons>
-                    </> : null}
-                </Anime>
+                    </SeeMoreButtons>
+                </> : null}
             </ProjectContent>
-            <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={700}>
-                <LatestGrid
-                    items={latestProjects}
-                    component={LatestProjectDisplay}
-                    heading={"Latest Projects"}
-                    useCompactColumns={true}
-                    allItemsLink={"/projects"} />
-            </Anime>
+            <LatestGrid
+                items={latestProjects}
+                component={LatestProjectDisplay}
+                heading={"Latest Projects"}
+                useCompactColumns={true}
+                allItemsLink={"/projects"} />
         </>
     )
 }

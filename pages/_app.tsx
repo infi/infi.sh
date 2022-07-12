@@ -1,9 +1,8 @@
 import "../styles/globals.scss"
 import "katex/dist/katex.min.css"
-import { AppProps } from "next/app"
 import Head from "next/head"
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: any) => {
     return (
         <>
             <Head>

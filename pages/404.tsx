@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import Navbar from "../components/Navbar"
-import dynamic from "next/dynamic"
-const Anime = dynamic(() => import("react-anime"), { ssr: false })
 
 const NotFoundWrapper = styled.div`
     display: flex;
@@ -36,12 +34,8 @@ const NotFound = () => {
             <Navbar />
             <NotFoundWrapper>
                 <div>
-                    <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                        <NotFoundStatusCode>404</NotFoundStatusCode>
-                    </Anime>
-                    <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={600}>
-                        <NotFoundMessage>Page not found. Maybe next time?</NotFoundMessage>
-                    </Anime>
+                    <NotFoundStatusCode>404</NotFoundStatusCode>
+                    <NotFoundMessage>Page not found. Maybe next time?</NotFoundMessage>
                 </div>
             </NotFoundWrapper>
         </>

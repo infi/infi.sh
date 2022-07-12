@@ -1,11 +1,9 @@
 import { getAllProjects } from '../lib/projects'
 import Navbar from '../components/Navbar'
 import styled from 'styled-components'
-import dynamic from 'next/dynamic'
 import Head from "next/head"
 import LatestGrid from '../components/display/LatestGrid'
 import LatestProjectDisplay from '../components/display/LatestProjectDisplay'
-const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 const ProjectHeader = styled.div`
     display: flex;
@@ -50,17 +48,11 @@ const AllProjects = ({ projects, featuredProjects }: { projects: any, featuredPr
             </Head>
             <Navbar />
             <ProjectHeader>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={400}>
-                    <PageTitle>Projects</PageTitle>
-                </Anime>
+                <PageTitle>Projects</PageTitle>
             </ProjectHeader>
             <ProjectContent className="markdown-dynamic-content">
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={500}>
-                    <LatestGrid component={LatestProjectDisplay} items={featuredProjects} heading="Featured Projects" />
-                </Anime>
-                <Anime easing={'easeOutElastic(1, .8)'} translateY={[30, 0]} opacity={[0, 1]} delay={600}>
-                    <LatestGrid component={LatestProjectDisplay} items={projects} heading="Projects" useCompactColumns={true} />
-                </Anime>
+                <LatestGrid component={LatestProjectDisplay} items={featuredProjects} heading="Featured Projects" />
+                <LatestGrid component={LatestProjectDisplay} items={projects} heading="Projects" useCompactColumns={true} />
             </ProjectContent>
         </>
     )

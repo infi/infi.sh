@@ -1,7 +1,5 @@
 import styled from "styled-components"
-import dynamic from "next/dynamic"
 import Link from "next/link"
-const Anime = dynamic(() => import('react-anime'), { ssr: false })
 
 
 const NavbarWrapper = styled.nav`
@@ -41,13 +39,11 @@ const NavbarLink = styled(Link)`
 const Navbar = () => {
     return (
         <NavbarWrapper>
-            <Anime easing={'easeOutElastic(1, .8)'} translateY={[10, 0]} opacity={[0, 1]} delay={50}>
-                <NavbarLeft>
-                    <NavbarLink href="/">
-                        <NavbarBrand>Infi</NavbarBrand>
-                    </NavbarLink>
-                </NavbarLeft>
-            </Anime>
+            <NavbarLeft>
+                <NavbarLink href="/">
+                    <NavbarBrand>Infi</NavbarBrand>
+                </NavbarLink>
+            </NavbarLeft>
         </NavbarWrapper>
     )
 }
