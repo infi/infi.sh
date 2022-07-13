@@ -24,4 +24,4 @@ buttons:
       text: GitHub Organization
 ---
 
-GIFBox is a service-oriented GIF aggregator to the likes of many similar services. It is built to be embeddable in other services and is used as the primary GIF provider for [Revolt](http://localhost:3000/project/revolt).
+GIFBox is a service-oriented GIF aggregator to the likes of many similar services. It is built to be embeddable in other services and is used as the primary GIF provider for [Revolt](/project/revolt).

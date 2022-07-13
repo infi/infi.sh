@@ -1,6 +1,6 @@
 module.exports = {
     swcMinify: true,
-    experimental: {
+    compiler: {
         styledComponents: true
     }
 }
