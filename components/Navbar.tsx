@@ -1,24 +1,29 @@
 import styled from "styled-components"
 import Link from "next/link"
-
+import Lottie from "lottie-react"
+import navbarJson from "../animations/navbar.json"
 
 const NavbarWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    padding-left: 0;
     position: absolute;
     top: 0;
 `
 
-const NavbarBrand = styled.span`
-    font-size: 1.5rem;
-    font-weight: 700;
-    user-select: none;
+const NavbarBrand = styled.div`
+    width: 5rem;
     cursor: pointer;
-    transition: color .2s ease-in-out;
-    
+    transition: filter .1s ease-in-out;
+    filter: none;
+
     :hover {
-        color: var(--color-tertiary);
+        filter: brightness(80%);
+    }
+
+    :active {
+        filter: brightness(70%);
     }
 `
 
@@ -41,7 +46,9 @@ const Navbar = () => {
         <NavbarWrapper>
             <NavbarLeft>
                 <NavbarLink href="/">
-                    <NavbarBrand>Infi</NavbarBrand>
+                    <NavbarBrand>
+                        <Lottie animationData={navbarJson} loop={false} />
+                    </NavbarBrand>
                 </NavbarLink>
             </NavbarLeft>
         </NavbarWrapper>
