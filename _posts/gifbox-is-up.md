@@ -26,7 +26,7 @@ I quickly came up with a box-like logo &mdash; note the curious lack of a floor 
 
 The API was built using a stack I knew. It was powered by [Express](https://expressjs.com) (most of which I learned during a phase in which I was steadily creating new Discord bots), and MongoDB for storage. The MinIO client libraries were used to interface with S3, though I do admit I only learned about the existence of MinIO through Revolt's use of it. The present-day API still uses all of those, and they are in fact good choices that I still take no issue with.  
   
-The API has, of course, some very questionable coding and logic practices, and I would in no way consider it production-ready nowadays. Considering this was only a year ago, you may see the old API was admittedly very rushed, though I won't undersell the fact I have also certainly improved in the past year. The source code is still [available](https://gitlab.insrt.uk/gifbox/core) on Insert's GitLab, if you're interested.  
+The API had, of course, some very questionable coding and logic practices, and I would in no way consider it production-ready nowadays. Considering this was only a year ago, you may see the old API was admittedly very rushed, though I won't undersell the fact I have also certainly improved in the past year. The source code is still [available](https://gitlab.insrt.uk/gifbox/core) on Insert's GitLab, if you're interested.  
   
 In the beginning, the API stored the GIFs in the literal GIF format. While this may seem as the most obvious thing, no other GIF service does this in practice. The reason for this is fundemantal: **GIFs are actually horrible.**  
   
@@ -57,7 +57,7 @@ Here's a brief showcase of what it offered:
   
 I won't even go into half of the issues that are visible from just those screenshots, but I will explicitly take the time to mention that separating your search and query pages (and still having them on the same `/search` route) is a very silly idea.     
   
-The avatar system ended up being really poorly thought-out back then: The user had to set a post ID as their avatar, and that post would then become their avatar. In hindsight, it's quite obvious that it would lead to "avatarposting", just so people could set their avatar to what they wanted. Though the frontend never supported setting an avatar or even displaying any avatars, as it never actually got that far.
+The avatar system ended up being really poorly thought-out back then: The user had to set a post ID as their avatar, and that post would then become their avatar. In hindsight, it's quite obvious that it would lead to "avatarposting", just so people could set their avatar to what they wanted, though the frontend never supported setting an avatar or even displaying any avatars, as it never actually got that far.
   
 ### The Client: One Attempt to Make Things Better  
   
@@ -87,7 +87,7 @@ The API still consists of a lot of the same building blocks from the first itera
   
 Sure, there are a lot of smaller differences, like using the Argon2 hashing function for passwords instead of the older bcrypt function, but the main addition is converting files to WebP after upload. As the files are served as WebP directly instead of attempting to convert them on every request while completely uncached, the API became a lot faster too. The avatar system is now fixed too, using dedicated avatar images instead of attempting to reuse the posts system. This seems like a very obvious change, but you can thank the past me for not thinking of this during iteration one.  
   
-Taking into account the positive experiences that the Revolt project made with using GitHub for code hosting, I've done the same and [github.com/gifbox](https://github.com/gifbox) became the home of all iteration two source code.
+Taking into account the positive experiences that the Revolt project had with using GitHub for code hosting, I've done the same and [github.com/gifbox](https://github.com/gifbox) became the home of all iteration two source code.
   
 After finishing the very basic version of the API, I continued by writing an extensive [client library](https://js.gifbox.me) for the GIFBox API. Conveniently, the `gifbox.js` name was available for me to use. With GIFBox now being a sub-project of Revolt, this was perfect to mirror its `revolt.js` API client library.  
   
@@ -95,7 +95,7 @@ If you've been paying attention, you will notice that the first iteration didn't
 
 Oh, did I mention the fancy [gifbox.me](https://gifbox.me) domain we have now? Yeah, that's also pretty neat. There's a bit more to it, but I won't go into that in this article.  
   
-With API and library out of the way, final step was to build the actual client. It had to be server-side rendered &mdash; otherwise, the Revolt API wouldn't be able to fetch the metadata of GIFBox links &mdash; as Revolt's embed crawler doesn't run JS. I have decided to use [Next.js](https://next.js) for that, effectively giving me the best of the server-side rendering and client-side rendering worlds.  
+With API and library out of the way, the final step was to build the actual client. It had to be server-side rendered &mdash; otherwise, the Revolt API wouldn't be able to fetch the metadata of GIFBox links &mdash; as Revolt's embed crawler doesn't run JS. I have decided to use [Next.js](https://next.js) for that, effectively giving me the best of the server-side rendering and client-side rendering worlds.  
   
 While I learned from the first client of the first iteration and didn't use a CSS framework this time, I consciously ignored the mockup to focus on a more functional and user-friendly style, though you will have to visit the website yourself to see how it looks.  
   
