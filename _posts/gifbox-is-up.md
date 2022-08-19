@@ -101,6 +101,6 @@ While I learned from the first client of the first iteration and didn't use a CS
   
 I did, however, use [Tailwind](https://tailwindcss.com). It has a lot of useful helper functions for layout and style, and one of Tailwind's default colors (Blue 500 or `#3b82f6`) is the primary brand color of GIFBox.  
   
-This completes our small GIFBox history journey, be sure to check out the [final site](https://gifbox.com) and join the GIFBox Revolt server at https://rvlt.gg/gifbox!
+This completes our small GIFBox history journey, be sure to check out the [final site](https://gifbox.me) and join the GIFBox Revolt server at https://rvlt.gg/gifbox!
 
 > It's /dʒɪf/.
