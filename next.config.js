@@ -1,10 +1,6 @@
-const { withPlausibleProxy } = require("next-plausible")
-
-module.exports = withPlausibleProxy({
-    customDomain: "https://insight.infi.sh"
-})({
+module.exports = {
     swcMinify: true,
     compiler: {
         styledComponents: true
     }
-})
+}

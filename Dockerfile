@@ -1,11 +1,19 @@
-FROM node:lts-bullseye
+FROM node:alpine
 
 WORKDIR /app
 
 COPY . /app
 
-RUN apt update
-RUN apt install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+RUN apk add --update --no-cache \
+    make \
+    g++ \
+    jpeg-dev \
+    cairo-dev \
+    giflib-dev \
+    pango-dev \
+    libtool \
+    autoconf \
+    automake
 
 RUN npm i -D
 
