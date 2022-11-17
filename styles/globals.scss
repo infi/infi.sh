@@ -19,6 +19,11 @@ body {
     color: var(--color-foreground);
 }
 
+:link,
+:visited {
+    text-decoration: none;
+}
+
 ::selection {
     background: var(--color-secondary);
     color: var(--color-background);

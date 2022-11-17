@@ -12,7 +12,11 @@ const MyApp = ({ Component, pageProps }: any) => {
                 <meta property="og:site_name" content="Infi" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="theme-color" content="#28202f" />
-                <link rel="icon" href="https://infi.sh/favicon.png" type="image/png" />
+                <link
+                    rel="icon"
+                    href="https://infi.sh/favicon.png"
+                    type="image/png"
+                />
             </Head>
             <Component {...pageProps} />
         </PlausibleProvider>
