@@ -1,13 +1,14 @@
-import { getAllPosts, getPostBySlug } from '../../lib/posts'
-import markdownToHtml from '../../lib/markdown'
-import { useRouter } from 'next/router'
-import Navbar from '../../components/Navbar'
-import styled from 'styled-components'
+import { getAllPosts, getPostBySlug } from "../../lib/posts"
+import markdownToHtml from "../../lib/markdown"
+import { useRouter } from "next/router"
+import Navbar from "../../components/Navbar"
+import styled from "styled-components"
 import Head from "next/head"
-import { formatDistanceToNow } from 'date-fns'
-import LatestGrid from '../../components/display/LatestGrid'
-import AuthorDisplay from '../../components/display/AuthorDisplay'
-import LatestPostDisplay from '../../components/display/LatestPostDisplay'
+import { formatDistanceToNow } from "date-fns"
+import LatestGrid from "../../components/display/LatestGrid"
+import AuthorDisplay from "../../components/display/AuthorDisplay"
+import LatestPostDisplay from "../../components/display/LatestPostDisplay"
+import PostRelationDisplay from "../../components/display/PostRelationDisplay"
 
 const PostHeader = styled.header`
     display: flex;
@@ -75,7 +76,7 @@ const PostAuthorHeader = styled.h3`
     user-select: none;
 `
 
-const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
+const Post = ({ post, latestPosts }: { post: any; latestPosts: any }) => {
     const router = useRouter()
 
     if (!router.isFallback && !post?.slug) {
@@ -83,7 +84,10 @@ const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
             <>
                 <Head>
                     <meta property="og:title" content="Post not found" />
-                    <meta property="og:image" content="https://infi.sh/opengraph.png" />
+                    <meta
+                        property="og:image"
+                        content="https://infi.sh/opengraph.png"
+                    />
                     <meta property="og:description" content="Sorry for that" />
                 </Head>
                 <Navbar />
@@ -99,23 +103,51 @@ const Post = ({ post, latestPosts }: { post: any, latestPosts: any }) => {
         <>
             <Head>
                 <meta property="og:title" content={post.title} />
-                <meta property="og:image" content={post.ogImage ?? "https://infi.sh/opengraph.png"} />
-                <meta property="og:description" content={post.description + ` (${post.readingTime})`} />
+                <meta
+                    property="og:image"
+                    content={post.ogImage ?? "https://infi.sh/opengraph.png"}
+                />
+                <meta
+                    property="og:description"
+                    content={post.description + ` (${post.readingTime})`}
+                />
             </Head>
             <Navbar />
             <PostHeader>
                 <PostTitle>{post.title}</PostTitle>
-                <PostDate>{formatDistanceToNow(new Date(post.date))} ago · {post.readingTime}</PostDate>
+                <PostDate>
+                    {formatDistanceToNow(new Date(post.date))} ago ·{" "}
+                    {post.readingTime}
+                </PostDate>
                 <PostDescription>{post.description}</PostDescription>
             </PostHeader>
             <PostContent>
-                <article className="markdown-dynamic-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <article
+                    className="markdown-dynamic-content"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+                {(post.parsedRelation?.project ||
+                    post.parsedRelation?.post) && (
+                    <PostRelationDisplay
+                        post={
+                            post.parsedRelation?.project ||
+                            post.parsedRelation?.post
+                        }
+                    />
+                )}
                 <PostAuthor>
                     <PostAuthorHeader>About the author</PostAuthorHeader>
-                    <AuthorDisplay name={post.author.name} imageUrl={post.author.picture} />
+                    <AuthorDisplay
+                        name={post.author.name}
+                        imageUrl={post.author.picture}
+                    />
                 </PostAuthor>
             </PostContent>
-            <LatestGrid items={latestPosts} component={LatestPostDisplay} heading={"Latest Posts"} />
+            <LatestGrid
+                items={latestPosts}
+                component={LatestPostDisplay}
+                heading={"Latest Posts"}
+            />
         </>
     )
 }
@@ -128,19 +160,26 @@ type Params = {
 
 export const getStaticProps = async ({ params }: Params) => {
     const post = getPostBySlug(params.slug, [
-        'title',
-        'description',
-        'coverImage',
-        'date',
-        'author',
-        'slug',
-        'content',
-        'ogImage',
-        'readingTime',
+        "title",
+        "description",
+        "coverImage",
+        "date",
+        "author",
+        "slug",
+        "content",
+        "ogImage",
+        "readingTime",
+        "parsedRelation",
     ])
-    const content = await markdownToHtml(post.content || '')
+    const content = await markdownToHtml(post.content || "")
 
-    const allPosts = getAllPosts(["title", "slug", "coverImage", "description", "date"])
+    const allPosts = getAllPosts([
+        "title",
+        "slug",
+        "coverImage",
+        "description",
+        "date",
+    ])
 
     return {
         props: {
@@ -152,7 +191,6 @@ export const getStaticProps = async ({ params }: Params) => {
         },
     }
 }
-
 
 export const getStaticPaths = async () => {
     const posts = getAllPosts(["slug"])

@@ -2,6 +2,7 @@ import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
 import readingTime from "reading-time"
+import { getProjectBySlug } from "./projects"
 
 const postsDirectory = join(process.cwd(), "_posts")
 
@@ -33,11 +34,43 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
             items[field] = readingTime(content).text
         }
 
+        if (field === "parsedRelation") {
+            if (!data.relation) return
+
+            let relation: any = {}
+
+            if (data.relation?.post) {
+                relation.post = getPostBySlug(data.relation?.post, [
+                    "title",
+                    "slug",
+                    "coverImage",
+                    "readingTime",
+                    "description",
+                    "date",
+                ])
+            }
+
+            if (data.relation?.project) {
+                relation.project = getProjectBySlug(data.relation?.project, [
+                    "title",
+                    "slug",
+                    "description",
+                    "coverImage",
+                    "years",
+                    "categories",
+                ])
+            }
+
+            items[field] = relation
+        }
+
         if (field === "ogImage") {
             if (data[field]) {
                 items[field] = data[field]
             } else {
-                items[field] = `https://infi.sh/api/opengraph/post/${realSlug}.png`
+                items[
+                    field
+                ] = `https://infi.sh/api/opengraph/post/${realSlug}.png`
             }
         }
 
@@ -54,6 +87,8 @@ export const getAllPosts = (fields: string[] = []) => {
     const posts = slugs
         .map((slug) => getPostBySlug(slug, ["date", ...fields]))
         // sort posts by date in descending order
-        .sort((post1, post2) => (new Date(post1.date) < new Date(post2.date) ? 1 : -1))
+        .sort((post1, post2) =>
+            new Date(post1.date) < new Date(post2.date) ? 1 : -1
+        )
     return posts
 }
